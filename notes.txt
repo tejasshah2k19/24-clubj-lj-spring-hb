@@ -1,0 +1,98 @@
+spring-> 
+	1) spring web
+	2) spring boot devtools 
+databse-> 
+	1)mysql driver
+hibernate->
+	1)spring data jpa 
+
+jsp	->
+	tomcat embeded jasper 
+	
+	
+------------------------------------------------------
+
+folder structure ->
+		src -> main->java -> com -> 
+								controller 
+								entity 
+								repository 
+								 
+-------------------------------------------------------
+configuration => 	
+	application.properties 
+	
+		
+	server.port=9999
+
+	spring.mvc.view.suffix=.jsp
+	spring.mvc.view.prefix=/WEB-INF/views/
+
+	#database 
+	spring.datasource.url=jdbc:mysql://localhost:3306/campus
+	spring.datasource.username=root
+	spring.datasource.password=root
+	#spring.datasource.driver-class-name=
+	#type4 
+
+
+	#hibernate
+	#spring-data-jpa
+	#dialect-> mysql , oracle ,pg 
+	spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+	spring.jpa.hibernate.ddl-auto=update
+	spring.jpa.show-sql=true
+						
+-------------------------------------------------------
+hibernate will write sql queries 
+you can write if you want ! 
+sQL , HQL 
+
+
+no create table 
+no insert update delete select 
+
+1) entity  ------> table ----> collection  
+2) repository ----> dao --->  sql queries 
+
+
+ORM --> Object-Relational Mapping.
+
+relational-> table 
+ 
+how hibernate translate your queries ? 
+pg / oracle / mysql / sqlite / mssql server
+using dialect hibernate will run the query->
+
+----------------------------------------------------------
+
+
+CRUD -> 
+
+users -> 
+	userId
+	firstName
+	lastName 
+	email
+	password
+	role [ STUDENT,ADMIN,CLERK,XXX]
+	
+	
+entity is same as bean class -> bean++
+
+entity class is your table 
+and 
+all the instance variables of that class is the column/field of the table 
+
+what if i want a variable which is inside entity but it is not consider as column of a table?
+
+
+
+
+
+
+
+
+
+
+					
