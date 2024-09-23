@@ -86,6 +86,72 @@ all the instance variables of that class is the column/field of the table
 
 what if i want a variable which is inside entity but it is not consider as column of a table?
 
+@Entity
+@Table(name="")
+
+@Id
+@GeneratedValue()
+
+@Column
+	name
+	size
+	null
+	unique
+	default 
+
+@Transient 
+
+---------------------------------------------------------------------------
+Query -> 
+	dao >> repository 
+	
+	folder -> repository 
+	1)interface extends JpaRepository<Table,PK>  
+	2)@Repository {**optional}
+	
+-----------------------------------------------------------------------	
+	 
+
+jstl -> lib 
+	1) jar -> pom.xml 
+	2) jsp -> import 
+		<%@taglib %>
+		
+		
+directive -> include{inclusion} , page{jsp} , taglib{custom} 	
+------------------------------------------------------------------------		
+jstl ->
+		<dependency>
+			<groupId>jakarta.servlet.jsp.jstl</groupId>
+			<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+		</dependency>
+ 
+ 
+-----------------------------------
+	save(userEntity) -> insert / update 
+	primary key -> if its present -> update 
+				   if its present but not in the table or 
+				   if its missing -> insert 
+				   
+				    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
 
 
 

@@ -27,7 +27,7 @@ public class UserEntity {
 	// lombok we will do
 	@Transient
 	private String otp; 
-	private boolean active; 
+  	private boolean active=true; //active = true 
 	
 	public Integer getUserId() {
 		return userId;
