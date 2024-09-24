@@ -134,6 +134,50 @@ jstl ->
 				   if its missing -> insert 
 				   
 				    
+ ------------------------------------------------
+ 
+ relationship -> 
+ 
+ 	1:1
+ 	1:M
+ 	M:1
+ 	M:M
+ 	
+ 	
+ 	car 
+ 	carId	regNo 	keyId[FK] 
+ 	
+ 	
+ 	key
+ 	keyId	digitalCode 
+ 	
+ 	fk->column->db->table 
+ 	fk->entity->class object->
+ 
+ 
+ 
+ company have n number of projects 
+ company have n number of project managers 
+  1 project will manage by only 1 project manager 
+  but 1 project manager can manage n number of projects 
+  
+ 
+ project 	-> 
+ projectId title technology projectManagerId:FK
+ 
+ projectManager -> 
+ projectManageId 	name	
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
