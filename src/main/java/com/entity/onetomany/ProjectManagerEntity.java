@@ -19,9 +19,9 @@ public class ProjectManagerEntity {
 	private String firstName;
 	private String lastName;
 
-	@OneToMany
+	@OneToMany(mappedBy = "projectManager")
 	List<ProjectEntity> projects;
-	
+
 	public Integer getProjectManagerId() {
 		return projectManagerId;
 	}
