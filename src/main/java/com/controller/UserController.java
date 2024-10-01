@@ -6,18 +6,28 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.entity.UserEntity;
 import com.repository.UserRepository;
+import com.service.MailService;
+import com.service.OtpService;
 
 @Controller
 public class UserController {
 
 	@Autowired
 	UserRepository userRepository;
+
+	@Autowired
+	MailService mailService;
+
+	@Autowired
+	OtpService otpService;
 
 	@GetMapping("/newuser")
 	public String newUser() {
@@ -26,9 +36,15 @@ public class UserController {
 	}
 
 	@PostMapping("/saveuser")
-	public String saveUser(UserEntity userEntity) {
+	public String saveUser(@Validated UserEntity userEntity, BindingResult result, Model model) {
 		// dao : repository
 		// insert
+
+		if (result.hasErrors()) {
+			model.addAttribute("error", result);
+
+			return "NewUser";
+		}
 		userRepository.save(userEntity);// insert
 		return "NewUser";
 	}
@@ -86,6 +102,18 @@ public class UserController {
 
 			return "redirect:/users";
 		}
+	}
+
+	@GetMapping("/sendotp")
+	public String sendOtp() {
+		// verify email
+
+		// generate otp
+		String otp = otpService.generateAlnumOtp(6);
+
+		// send mail
+		mailService.sendOtpForgetPassword("tejas14all@gmail.com", otp);
+		return "ChangePassword";// email pwd cpwd otp
 	}
 
 }

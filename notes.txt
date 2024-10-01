@@ -173,8 +173,11 @@ jstl ->
  
  
  
- 
- 
+ ----------------------------
+ mail -> gmail -> 
+ 	1) java mail -> spring starter -> 
+ 	2) service -> method =>logic 
+ 	3) application.properties -> 
  
  
  

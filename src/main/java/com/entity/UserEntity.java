@@ -7,6 +7,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 
 @Entity // this will notify hb to create table in database
 //what is the name of table?->default its entity name 
@@ -18,9 +21,14 @@ public class UserEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer userId;
 
+	@NotBlank(message = "Please Enter FirstName")
 	@Column(length = 25)
 	private String firstName;
+	
+//	@Min(value = 2,message = "")
 	private String lastName;
+	
+//	@Pattern(regexp = "[]",message ="" )
 	private String email;
 	private String password;
 	private String role;// [ STUDENT,ADMIN,CLERK,XXX]

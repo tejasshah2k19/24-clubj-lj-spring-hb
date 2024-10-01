@@ -9,7 +9,9 @@
 <body>
 	<h2>New User</h2>
 	<form action="saveuser" method="post">
-	FirstName : <input type="Text" name="firstName"/><br><br>
+	FirstName : <input type="Text" name="firstName"/>
+	${error.getFieldError("firstName").getDefaultMessage()}
+	<br><br>
 	LastName :  <input type="Text" name="lastName"/><br><br>
 	Email : <input type="Text" name="email"/><br><br>
 	Password :  <input type="Text" name="password"/><br><br>
